@@ -15,6 +15,42 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 /* Setup end */
 
+/* Basic styles start */
+
+html {
+  font-size: 125%;
+}
+
+p {
+  font-size: 1rem;
+}
+
+/* Basic styles end */
+
+
+/* App.js styles start */
+
+body {
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-items: stretch;
+  flex: 1 1 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+
+aside {
+  flex: 1 1 30%;
+  transition: 1s ease all;
+  background-color: lightgrey;
+}
 
 * {
   transition: 1s all ease;
@@ -25,9 +61,15 @@ a {
   color: inherit;
 }
 
-.addItem {
-  position: relative
+.wrapper {
+  max-width: 1280px;
+  width: 85%;
+  margin: 0 auto;
 }
+
+/* .addItem {
+  position: relative
+} */
 
 
 /* START HERE TOMORROW */
@@ -64,6 +106,7 @@ img {
 
 ul {
   list-style: none;
+  overflow: scroll;
 }
 
 
@@ -80,10 +123,12 @@ ul {
 
 .queryItem {
   display: flex;
-  margin: 10px;
+  margin: 10px 0 10px;
+  padding: 0;
   width: 50%;
   min-width: 600px;
   background: lightblue;
+  border: none;
 }
 
 .queryItem .queryContent {

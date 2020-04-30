@@ -2,30 +2,34 @@ import React, { Component } from 'react'
 
 
 class Form extends Component {
-
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             userInput: ""
         }
     }
 
-    handleChange = (event) => {
+    handleFormChange = (event) => {
         this.setState({
             userInput: event.target.value
         })
     }
 
-    handleFormSubmit = (event) => {
-        event.preventDefault();   
-        // alert(this.state.userInput) 
+    waitForOnSubmit = (event) => {
+        this.props.handleFormSubmit(event, this.state.userInput)
     }
+
 
     render(){
         return(
-            <form onSubmit={this.handleFormSubmit}>
-                <input type="text" value={this.state.userInput} onChange={this.handleChange}/>
-                <button>Add to list</button>
+            <form onSubmit={this.waitForOnSubmit}>
+                <input 
+                    type="text" 
+                    value={this.state.userInput} 
+                    onChange={this.handleFormChange}
+                    placeholder="Enter film name"
+                />
+                <button type="submit"> Search </button>
             </form>
         )
     }

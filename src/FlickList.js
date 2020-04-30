@@ -2,7 +2,15 @@ import React from 'react'
 
 function FlickList(props) {
     return(
-        <li>{props.flicks}</li>
+        <React.Fragment>
+            {
+            props.filmList.map((film) => {
+                return (
+                    <li>{film}</li>
+                )
+            })
+            }
+        </React.Fragment>
     )
 }
 
