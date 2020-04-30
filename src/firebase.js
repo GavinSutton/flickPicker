@@ -3,15 +3,15 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 
 var firebaseConfig = {
-    apiKey: "AIzaSyBLU-yEKVmTF15M3bs5GPbhJHXXHuxze2k",
-    authDomain: "bookshelf-eadaf.firebaseapp.com",
-    databaseURL: "https://bookshelf-eadaf.firebaseio.com",
-    projectId: "bookshelf-eadaf",
-    storageBucket: "bookshelf-eadaf.appspot.com",
-    messagingSenderId: "550756219812",
-    appId: "1:550756219812:web:08d0101ea5e2976b35df31"
+    apiKey: "AIzaSyA-eCHfzwyAex3Xg2UQ9h1TShEfhFf5KWg",
+    authDomain: "project-five-f9920.firebaseapp.com",
+    databaseURL: "https://project-five-f9920.firebaseio.com",
+    projectId: "project-five-f9920",
+    storageBucket: "project-five-f9920.appspot.com",
+    messagingSenderId: "336671408502",
+    appId: "1:336671408502:web:13088098ed306641d97a57"
 };
-
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 export default firebase;

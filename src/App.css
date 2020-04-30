@@ -67,6 +67,19 @@ a {
   margin: 0 auto;
 }
 
+.flickListItem {
+  display: flex;
+  padding: 5px;
+  margin-top: 5px
+}
+
+.flickListItem img {
+  flex: 1
+}
+.flickListItem p {
+  flex: 1
+}
+
 /* .addItem {
   position: relative
 } */
