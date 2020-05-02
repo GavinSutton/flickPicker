@@ -19,15 +19,17 @@ class QueryList extends Component {
                                     </div>
                                     <div className="queryContent">
                                         <h3>{props.title}</h3>
-                                        <p>{props.overview}</p>
-                                    <button
-                                        onClick={this.waitAddToUserList}
-                                        value={props.title}
-                                        id={props.id}
-                                        data={"https://image.tmdb.org/t/p/w500" + props.poster_path}
-                                    >
-                                        Add Flick
-                                </button>
+                                        <div className="overviewBox">
+                                            <p>{props.overview}</p>
+                                        </div>
+                                        <button
+                                            onClick={this.waitAddToUserList}
+                                            value={props.title}
+                                            id={props.id}
+                                            data={"https://image.tmdb.org/t/p/w500" + props.poster_path}
+                                        >
+                                            Add Flick
+                                        </button>
                                     </div>
                             </li>
                         )

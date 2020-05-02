@@ -15,11 +15,11 @@ import './App.css';
 // const my array = []
 // if (array.length === 0 ).....
 // search by actor
-// Delete list items
 // Maybe use grid and then add change class?
 // Look up hamburger menu in react. 
 // CONNECT TO FIREBASE
 // See if you can figure out a better key scenaria
+// counter
 
 class App extends Component {
   // Constructor storing states. 
@@ -41,7 +41,7 @@ class App extends Component {
       const filmListFromDb = [];
       const dataFromDb = dbResponse.val();
       for (let key in dataFromDb) {
-        filmListFromDb.push(dataFromDb[key])
+        filmListFromDb.push( { filmName: dataFromDb[key], filmId: key})
       }
       this.setState({
         filmList: filmListFromDb
@@ -105,7 +105,7 @@ class App extends Component {
     handleRandomize = () => {
       const randomFilm = [...this.state.filmList]
       const randomNumber = Math.floor(Math.random() * randomFilm.length)
-      alert("You should watch " + randomFilm[randomNumber].filmName)
+      alert("You should watch " + randomFilm[randomNumber].filmName.filmName)
     }
 
 
@@ -114,46 +114,57 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <div className="wrapper flex">  
+        <div className="wrapper flex relative">  
           <main>
-            <h1>FlickPicker</h1>
-            <button onClick={this.handleShowList}>Show My List</button>
-            {/* Help.js section start */}
-            <Help />
-            {/* Help.js section end */}
 
+            {/* Header section start */}
+            <header>
+              <h1>FlickPicker</h1>
+              <button onClick={this.handleShowList} className={this.state.active ? "hamburger white" : "hamburger"}><i class="fas fa-film"></i><span>{this.state.filmList.length}</span></button>
 
-            {/* Form.js section start */}
-            <Form 
-              wow={this.wow} 
-              handleFormSubmit={this.handleFormSubmit} 
-              handleChange={this.handleChange}/>
-            {/* Form.js section end */}
+              {/* Help.js section start */}
+              <Help />
+              {/* Help.js section end */}
 
-            <article>
+              {/* Form.js section start */}
+              <Form 
+                wow={this.wow} 
+                handleFormSubmit={this.handleFormSubmit} 
+                handleChange={this.handleChange}/>
+              {/* Form.js section end */}
+            </header>
+            {/* Header section end */}
+
+            {/* <article> */}
               {/* Search query list (QueryList.js) start */}
               <ul className="queryList">
                 <QueryList queryList={this.state.queryList} addToUserList={this.handleAddToUserList}/>
               </ul>
               {/* Search query list (QueryList.js) end */}
-            </article>
+            {/* </article> */}
 
-            
-          </main>
-          {
-            this.state.active
-              ?
-              <aside>
-                {/* List section (FlickList.js) start */}
+
+            {/* FlickList / Side Menu start */}
+            <aside className={this.state.active ? "showList" : null}>
+              <div className="menuTop">
                 <h2>Your Flicks</h2>
-                <ul className="userList">
-                  <FlickList filmList={this.state.filmList} />
-                </ul>
-                <button onClick={this.handleRandomize}>Randomize</button>
-                {/* List section (FlickList.js) end */}
-              </aside>
-              : null
-          }
+              </div>
+              <ul className="userList">
+                <li></li>
+                {
+                  this.state.filmList.map((film) => {
+                    return (
+                      <FlickList filmList={film} key={film.filmId} />
+                    )
+                  })
+                }
+              </ul>
+              <button onClick={this.handleRandomize} className="randomize">Randomize</button>
+
+            </aside>
+            {/* FlickList / Side Menu end */}
+          </main>
+            
         </div>
       </div>
     );

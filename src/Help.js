@@ -16,13 +16,13 @@ class Help extends Component {
 
     render(){
         return(
-            <div>
+            <div className="helpBox">
                 <button className="showHelp" onClick={this.handleShowHelp}>?</button>
                 {/* Help information: shown when {this.state.active: true} */}
                 {this.state.active 
-                    ? <div className="help">
+                    ? <div className="helpContents">
                         <p>Having trouble deciding on a movie?</p>
-                        <p>Add movies that tickle your fancy to the list. Hit randomize and we'll make the choice for you.</p>
+                        <p>Find flicks that tikle your fancy using the search bar below. Click "Add Flick" to add that movie to the list. View your current list by clicking the film button. Hit randomize and we'll make the choice for you.</p>
                     </div>
                     : null}
             </div>

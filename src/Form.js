@@ -17,6 +17,9 @@ class Form extends Component {
 
     waitForOnSubmit = (event) => {
         this.props.handleFormSubmit(event, this.state.userInput)
+        this.setState({
+            userInput: ""
+        })
     }
 
 
@@ -28,8 +31,9 @@ class Form extends Component {
                     value={this.state.userInput} 
                     onChange={this.handleFormChange}
                     placeholder="Enter film name"
+                    className="formInput"
                 />
-                <button type="submit"> Search </button>
+                <button className="formButton" type="submit"> Search </button>
             </form>
         )
     }

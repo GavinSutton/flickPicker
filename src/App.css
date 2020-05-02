@@ -15,184 +15,339 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 /* Setup end */
 
+
+/* colors: 
+#80A1C1 */
+
 /* Basic styles start */
+  * {
+      transition: 0.4s all ease;
+  }
 
-html {
-  font-size: 125%;
-}
+  p {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin: 0.5rem 0;
+    font-family: 'Muli', sans-serif;
+  }
 
-p {
-  font-size: 1rem;
-}
+  body {
+    font-size: 125%;
+    font-family: 'Muli', sans-serif;
+    color: white;
+    background: #BD897E;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+  }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover, 
+  button:hover {
+    color: #E49273;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  button {
+    color: white;
+    background: inherit;
+    border: 1px solid white;
+  }
+
+  button:focus {
+    border: 2px solid #E49273;
+    box-shadow: 2px 2px 2px #E49273;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: white;
+    font-family: 'Muli', sans-serif;
+    font-weight: 300;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  img {
+        width: 100%;
+        display: block;
+  }
+
+  .wrapper {
+      max-width: 1280px;
+      width: 85%;
+      margin: 0 auto;
+  }
+
+  .flexCol {
+    display: flex;
+    flex-direction: column;
+  }
 /* Basic styles end */
 
 
 /* App.js styles start */
 
-body {
-  height: 100vh;
-}
+  /* Header styles start */
 
-main {
-  display: flex;
-  flex-direction: column;
-  justify-items: stretch;
-  flex: 1 1 100%;
-}
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.flex {
-  display: flex;
-}
+    .headerDown {
+      
+    }
 
+    h1 {
+      margin: 2rem 0 0.5rem;
+      border-bottom: 2px solid white;
+    }
 
-aside {
-  flex: 1 1 30%;
-  transition: 1s ease all;
-  background-color: lightgrey;
-}
+    .hamburger {
+      font-size: 2rem;
+      background-color: inherit;
+      position: absolute;
+      right: 34px;
+      top: 20px;
+      z-index: 2;
+      border: none;
+    }
 
-* {
-  transition: 1s all ease;
-}
+    .white {
+      color: white;
+    }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+    .hamburger span {
+      font-size: 1rem;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      padding: 1px 1px 1px 0;
+      top: -9px;
+      text-align: center;
+    }
 
-.wrapper {
-  max-width: 1280px;
-  width: 85%;
-  margin: 0 auto;
-}
-
-.flickListItem {
-  display: flex;
-  padding: 5px;
-  margin-top: 5px
-}
-
-.flickListItem img {
-  flex: 1
-}
-.flickListItem p {
-  flex: 1
-}
-
-/* .addItem {
-  position: relative
-} */
+    .relative {
+      position: relative
+    }
+  /* Header styles end */
 
 
-/* START HERE TOMORROW */
-/* .addItemOverlay {
-  background: rgba(0,0,0,0.7);
-  position: absolute;
-  height: 99%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
+  /* Main styles start */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: stretch;
+    height: 100vh;
+    flex: 1 1 100%;
   }
 
-
-  .addItem:hover .addItemOverlay{
-  opacity: 1;
-  } */
-
-  .addItem:hover {
-    filter: drop-shadow(8px 8px 10px gray);
+  .flex {
+    display: flex;
   }
 
-img {
-  width: 100%;
-  display: block;
-}
+    /* Help section start */
+      .helpBox {
+        margin: 5px 0;
+        padding: 10px 0;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-.queryItem .imgContainer {
-  flex: 1 1 30%;
-  min-width: 150px;
-}
+      .showHelp {
+        background-color: inherit;
+      }
 
-ul {
-  list-style: none;
-  overflow: scroll;
-}
+      .showHelp:hover {
+        transform: scale(1.1);
+      }
+
+      .helpContents {
+        margin: 5px 0;
+        text-align: center;
+      }
+    /* Help section end */
+
+    /* Form section Start */
+      form {
+        margin: 5px 0;
+        padding: 5px 0;
+        height: 70px;
+      }
+
+      .formButton {
+        height: 100%;
+      }
+
+      .formInput {
+        border: 1px solid black;
+        border-right: 0;
+        height: 100%;
+        padding: 2px 2px 2px 10px;
+      }
+    /* Form section end */
+
+    /* Film search list section start */
+      .queryList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: inherit;
+        overflow: scroll;
+        width: 700px;
+      }
+
+      img {
+        text-align: center;
+      }
+
+      .queryItem {
+        color: white;
+        display: flex;
+        margin: 10px 0 10px;
+        padding: 0;
+        width: 80%;
+        min-width: 600px;
+        background: rgba(57, 56, 56, 0.755);
+        border: none;
+      }
+
+      .queryContent {
+        flex: 3 1 70%;
+        display: flex;
+        flex-direction: column;
+        margin: 15px 15px 0 15px;
+        text-align: left;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 240px;
+      }
+
+      .overviewBox {
+        overflow: scroll;
+        height: 50%;
+      }
+
+      .queryContent button {
+        margin-top: 25px;
+        padding: 10px 15px;
+        border: 1px solid white;
+      }
+
+      .queryContent button:hover {
+        border: 1px solid #E49273;
+      }
+    
+      .queryItem:hover {
+        filter: drop-shadow(8px 8px 10px gray);
+      }
+
+      .queryItem .imgContainer {
+        flex: 1 1 30%;
+        min-width: 150px;
+      }
+
+      article {
+        height: inherit;
+        width: fit-content;
+      }
+
+    /* Film search list section end */
+
+    /* Your flicks (FlickList.js) section start */
+      .menuTop {
+        position: fixed;
+        width: inherit;
+        height: 100px;
+        border: none;
+        background: rgba(57, 56, 56, 0.755);
+        color: white;
+        text-align: center;
+      }
+
+      .menuTop h2 {
+        margin-top: 60px;
+      }
+
+      aside {
+        position: fixed;
+        width: 300px;
+        height: 100vh;
+        transition: 1s ease all;
+        background-color: lightgrey;
+        right: -500px;
+        z-index: 1;
+        overflow: scroll;
+      }
+
+      .userList li:first-child {
+        margin-top: 100px;
+      }
+
+      .userList li:last-child {
+        margin-bottom: 50px;
+      }
+
+      .flickListItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        margin-top: 5px;
+        border: 1px solid red;
+      }
+
+      .flickListItem img {
+        width: 80%;
+      }
+
+      .flickListItem button {
+        width: 80%;
+      }
+
+      .flickListItem button:hover {
+        border: 1px solid #E49273;
+      }
+
+      .randomize {
+        position: fixed;
+        bottom: 0;
+        width: inherit;
+        height: 50px;
+        border: none;
+        background:rgba(57, 56, 56, 0.755);
+        color: white;
+      }
+
+      .showList {
+        right: 0
+      }
 
 
-.queryList {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.queryList li {
-  display: flex;
-  justify-content: center;
-}
-
-.queryItem {
-  display: flex;
-  margin: 10px 0 10px;
-  padding: 0;
-  width: 50%;
-  min-width: 600px;
-  background: lightblue;
-  border: none;
-}
-
-.queryItem .queryContent {
-  flex: 3 1 70%;
-  margin: 15px;
-  text-align: left;
-  white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
-
-
-/* Pre existing code */
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+    /* Your flicks (FlickList.js) section end */
