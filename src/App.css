@@ -17,7 +17,9 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 
 /* colors: 
-#80A1C1 */
+darkBlue: rgba(40, 48, 68, 0.851)  OR 
+lightBlue: rgb(120,161,187)  OR   #78a1bb
+
 
 /* Basic styles start */
   * {
@@ -34,8 +36,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   body {
     font-size: 125%;
     font-family: 'Muli', sans-serif;
-    color: white;
-    background: #BD897E;
+    color: #EBF5EE;
+    background: #BFA89E;
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -58,12 +60,16 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   button {
-    color: white;
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: #EBF5EE;
     background: inherit;
-    border: 1px solid white;
+    border: 1px solid #EBF5EE;
+    text-transform: uppercase;
   }
 
   button:focus {
+    color: #E49273;
     border: 2px solid #E49273;
     box-shadow: 2px 2px 2px #E49273;
   }
@@ -71,13 +77,15 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   h1,
   h2,
   h3 {
-    color: white;
+    color: #EBF5EE;
     font-family: 'Muli', sans-serif;
     font-weight: 300;
   }
 
   h1 {
-    font-size: 3.5rem;
+    font-size: 5.3rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
   }
 
   h2 {
@@ -102,6 +110,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   .flexCol {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 /* Basic styles end */
 
@@ -114,15 +123,21 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 600px;
     }
+    
 
     .headerDown {
-      
+      margin-top: 250px;
+    }
+
+    .headerUp {
+      margin-top: 0;
     }
 
     h1 {
       margin: 2rem 0 0.5rem;
-      border-bottom: 2px solid white;
+      border-bottom: 2px solid #EBF5EE;
     }
 
     .hamburger {
@@ -136,7 +151,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     }
 
     .white {
-      color: white;
+      color: #EBF5EE;
     }
 
     .hamburger span {
@@ -156,7 +171,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 
   /* Main styles start */
-  main {
+  .allContent {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,22 +180,24 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     flex: 1 1 100%;
   }
 
+  main {
+    height: 70vh;
+    overflow: hidden;
+  }
+
   .flex {
     display: flex;
   }
 
     /* Help section start */
-      .helpBox {
-        margin: 5px 0;
-        padding: 10px 0;
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
 
       .showHelp {
+        font-size: 2rem;
         background-color: inherit;
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        border: none
       }
 
       .showHelp:hover {
@@ -188,8 +205,22 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       }
 
       .helpContents {
+        width: 800px;
+        height: 200px;
         margin: 5px 0;
+        padding: 5px;
         text-align: center;
+        color:rgba(40, 48, 68, 0.851);
+        background: #EBF5EE;
+        border: 2px solid rgba(40, 48, 68, 0.851);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        left: 50%;
+        margin-left: -400px;
+        top: 50%;
+        margin-top: -100px;
       }
     /* Help section end */
 
@@ -202,13 +233,16 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
       .formButton {
         height: 100%;
+        width: 100px;
+        float: right;
       }
 
       .formInput {
-        border: 1px solid black;
+        border: 1px solid #EBF5EE;
         border-right: 0;
         height: 100%;
         padding: 2px 2px 2px 10px;
+        width: 500px;
       }
     /* Form section end */
 
@@ -227,13 +261,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       }
 
       .queryItem {
-        color: white;
+        color: #EBF5EE;
         display: flex;
         margin: 10px 0 10px;
         padding: 0;
         width: 80%;
         min-width: 600px;
-        background: rgba(57, 56, 56, 0.755);
+        background: rgba(40, 48, 68, 0.851);
         border: none;
       }
 
@@ -257,7 +291,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       .queryContent button {
         margin-top: 25px;
         padding: 10px 15px;
-        border: 1px solid white;
+        border: 1px solid #EBF5EE;
       }
 
       .queryContent button:hover {
@@ -273,11 +307,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         min-width: 150px;
       }
 
-      article {
-        height: inherit;
-        width: fit-content;
-      }
-
     /* Film search list section end */
 
     /* Your flicks (FlickList.js) section start */
@@ -286,8 +315,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         width: inherit;
         height: 100px;
         border: none;
-        background: rgba(57, 56, 56, 0.755);
-        color: white;
+        background: rgba(40, 48, 68, 0.851);
+        color: #EBF5EE;
         text-align: center;
       }
 
@@ -300,7 +329,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         width: 300px;
         height: 100vh;
         transition: 1s ease all;
-        background-color: lightgrey;
+        background-color: #EBF5EE;
         right: -500px;
         z-index: 1;
         overflow: scroll;
@@ -320,7 +349,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         align-items: center;
         padding: 5px;
         margin-top: 5px;
-        border: 1px solid red;
+      }
+
+      .flickListItem h3 {
+        color: #283044;
+        margin: 5px 0;
+        text-transform: uppercase;
+        border-bottom: 1px solid #283044;
       }
 
       .flickListItem img {
@@ -328,11 +363,15 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       }
 
       .flickListItem button {
+        color: #EBF5EE;
+        border: 1px solid rgba(40, 48, 68, 0.851);
+        background: rgba(40, 48, 68, 0.851);
         width: 80%;
       }
 
       .flickListItem button:hover {
         border: 1px solid #E49273;
+        color: #E49273; 
       }
 
       .randomize {
@@ -341,13 +380,96 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         width: inherit;
         height: 50px;
         border: none;
-        background:rgba(57, 56, 56, 0.755);
-        color: white;
+        background: rgba(40, 48, 68, 0.851);
+        color: #EBF5EE;
       }
 
       .showList {
         right: 0
       }
-
-
     /* Your flicks (FlickList.js) section end */
+
+
+/* MEDIA QUERIES START */
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .headerUp {
+    margin-top: 50px;
+  }
+
+  .helpContents {
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+  }
+
+  .formInput {
+    width: 330px;
+  }
+}
+
+@media (max-width: 700px) {
+  .queryItem {
+    min-width: auto;
+    width: 60%;
+  }
+
+  .queryContent {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  aside {
+    width: 100%;
+    right: -600px;
+  }
+
+  .queryItem {
+    flex-direction: column;
+  }
+
+  .queryContent {
+    flex: auto;
+  }
+
+  .queryContent button {
+    margin-top: 15px;
+}
+
+  .flickListItem img {
+    width: 40%;
+  }
+
+  .flickListItem button {
+    width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .helpContents {
+    width: 300px;
+    margin-left: -150px;
+  }
+
+  .formInput {
+    width: 200px;
+  }
+
+  .queryItem {
+    min-width: auto;
+    width: 43%;
+  }
+
+  .queryContent {
+    height: 200px;
+  }
+}

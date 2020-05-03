@@ -20,6 +20,7 @@ class Form extends Component {
         this.setState({
             userInput: ""
         })
+        this.props.handleHeaderActive();
     }
 
 
@@ -33,7 +34,7 @@ class Form extends Component {
                     placeholder="Enter film name"
                     className="formInput"
                 />
-                <button className="formButton" type="submit"> Search </button>
+                <button className="formButton" type="submit" aria-label="Search"> Search </button>
             </form>
         )
     }

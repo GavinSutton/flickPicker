@@ -20,6 +20,7 @@ import './App.css';
 // CONNECT TO FIREBASE
 // See if you can figure out a better key scenaria
 // counter
+// add posters for missing films
 
 class App extends Component {
   // Constructor storing states. 
@@ -31,7 +32,8 @@ class App extends Component {
       // queryList stores the list of films from the API call
       queryList: [],
       userInput: "",
-      active: false
+      active: false,
+      headerActive: false
     }
   }
 
@@ -108,61 +110,81 @@ class App extends Component {
       alert("You should watch " + randomFilm[randomNumber].filmName.filmName)
     }
 
+    // handleHeaderActive turns this.state.headerActive to true, and "opening" the page for the search query list to show. 
+    handleHeaderActive = () => {
+      this.setState({
+        headerActive: true
+      })
+    }
 
   // METHODS END
 
   render(){
     return (
       <div className="App">
-        <div className="wrapper flex relative">  
-          <main>
-
+        <div className="wrapper flexCol relative allContent" >  
             {/* Header section start */}
-            <header>
-              <h1>FlickPicker</h1>
-              <button onClick={this.handleShowList} className={this.state.active ? "hamburger white" : "hamburger"}><i class="fas fa-film"></i><span>{this.state.filmList.length}</span></button>
+          <header>
 
-              {/* Help.js section start */}
-              <Help />
-              {/* Help.js section end */}
+              {/* headerUp/header down section start (moves up and down) */}
+              <div className={this.state.headerActive? "headerUp flexCol" : "headerDown flexCol"}>
+                <h1>FlickPicker</h1>
+              <button onClick={this.handleShowList} className={this.state.active ? "hamburger white" : "hamburger"} aria-label="Open your film list menu"><i className="fas fa-film"></i><span>{this.state.filmList.length}</span></button>
 
-              {/* Form.js section start */}
-              <Form 
-                wow={this.wow} 
-                handleFormSubmit={this.handleFormSubmit} 
-                handleChange={this.handleChange}/>
-              {/* Form.js section end */}
+
+                {/* Help.js section start */}
+                <Help />
+                {/* Help.js section end */}
+
+
+                {/* Form.js section start */}
+                <Form 
+                  wow={this.wow} 
+                  handleFormSubmit={this.handleFormSubmit} 
+                  handleChange={this.handleChange}
+                  handleHeaderActive={this.handleHeaderActive} />
+                {/* Form.js section end */}
+
+
+              </div>
+              {/* headerUp/header down section end */}
+
+
+              {/* FlickList / Side Menu start */}
+              <aside className={this.state.active ? "showList" : null}>
+                <div className="menuTop">
+                  <h2>Your Flicks</h2>
+                </div>
+                <ul className="userList">
+                  <li></li>
+                  {
+                    this.state.filmList.map((film) => {
+                      return (
+                        <FlickList filmList={film} key={film.filmId} />
+                      )
+                    })
+                  }
+                </ul>
+                <button onClick={this.handleRandomize} className="randomize" aria-label="Randomize your film list">Randomize</button>
+
+              </aside>
+              {/* FlickList / Side Menu end */}
+
             </header>
             {/* Header section end */}
 
-            {/* <article> */}
-              {/* Search query list (QueryList.js) start */}
+
+          <main>
+            {/* Search query list (QueryList.js) start */}
+            {
+              this.state.headerActive ? 
               <ul className="queryList">
                 <QueryList queryList={this.state.queryList} addToUserList={this.handleAddToUserList}/>
               </ul>
-              {/* Search query list (QueryList.js) end */}
-            {/* </article> */}
+              : null
+            }
 
-
-            {/* FlickList / Side Menu start */}
-            <aside className={this.state.active ? "showList" : null}>
-              <div className="menuTop">
-                <h2>Your Flicks</h2>
-              </div>
-              <ul className="userList">
-                <li></li>
-                {
-                  this.state.filmList.map((film) => {
-                    return (
-                      <FlickList filmList={film} key={film.filmId} />
-                    )
-                  })
-                }
-              </ul>
-              <button onClick={this.handleRandomize} className="randomize">Randomize</button>
-
-            </aside>
-            {/* FlickList / Side Menu end */}
+            {/* Search query list (QueryList.js) end */}
           </main>
             
         </div>
