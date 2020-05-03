@@ -16,11 +16,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* Setup end */
 
 
-/* colors: 
-darkBlue: rgba(40, 48, 68, 0.851)  OR 
-lightBlue: rgb(120,161,187)  OR   #78a1bb
-
-
 /* Basic styles start */
   * {
     transition: 0.4s all ease;
@@ -247,7 +242,7 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
     /* Film search list section start */
       .queryList {
         height: inherit;
-        overflow: scroll;
+        overflow: auto;
         width: 700px;
       }
 
@@ -287,7 +282,7 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
 
       .overviewBox {
         height: 50%;
-        overflow: scroll;
+        overflow: auto;
       }
 
       .queryContent button {
@@ -326,7 +321,7 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
         background-color: #EBF5EE;
         position: fixed;
         height: 100vh;
-        overflow: scroll;
+        overflow: auto;
         right: -500px;
         transition: 1s ease all;
         width: 300px;
@@ -458,7 +453,7 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
   }
 
   .queryItem {
-    flex-direction: column;
+    display: inline-block;
   }
 
   .queryContent {
