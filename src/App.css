@@ -231,6 +231,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       }
 
       .formInput {
+        background: #EBF5EE;
         border: 1px solid #EBF5EE;
         border-right: 0;
         height: 100%;
