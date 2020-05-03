@@ -110,7 +110,11 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
   }
 
   .flexCol, 
-  header {
+  header, 
+  .helpContents, 
+  .queryList, 
+  .flickListItem, 
+  .randomChoice {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -187,50 +191,48 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
     /* Help section start */
 
       .showHelp {
-        font-size: 2rem;
         background-color: inherit;
+        border: none;
+        font-size: 2rem;
         position: absolute;
-        top: 20px;
         right: -30px;
-        border: none
+        top: 20px;
       }
 
       .showHelp:hover {
+        border: none;
         transform: scale(1.1);
-        border: none
       }
 
       .helpContents {
-        width: 800px;
+        background: #EBF5EE;
+        border: 2px solid rgba(40, 48, 68, 0.851);
+        color:rgba(40, 48, 68, 0.851);
+        justify-content: center;
+        left: 50%;
         height: 200px;
         margin: 5px 0;
         padding: 5px;
-        text-align: center;
-        color:rgba(40, 48, 68, 0.851);
-        background: #EBF5EE;
-        border: 2px solid rgba(40, 48, 68, 0.851);
         position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        left: 50%;
         margin-left: -400px;
-        top: 50%;
         margin-top: -100px;
+        text-align: center;
+        top: 50%;
+        width: 800px;
       }
     /* Help section end */
 
     /* Form section Start */
       form {
+        height: 70px;
         margin: 5px 0;
         padding: 5px 0;
-        height: 70px;
       }
 
       .formButton {
+        float: right;
         height: 100%;
         width: 100px;
-        float: right;
       }
 
       .formInput {
@@ -244,9 +246,6 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
 
     /* Film search list section start */
       .queryList {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         height: inherit;
         overflow: scroll;
         width: 700px;
@@ -254,9 +253,9 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
 
       .error {
         background: rgba(40, 48, 68, 0.851);
-        width: 600px;
         padding: 25px;
         text-align: center;
+        width: 600px;
       }
 
       img {
@@ -264,41 +263,41 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
       }
 
       .queryItem {
+        background: rgba(40, 48, 68, 0.851);
+        border: none;
         color: #EBF5EE;
         display: flex;
         margin: 10px 0 10px;
+        min-width: 600px;
         padding: 0;
         width: 80%;
-        min-width: 600px;
-        background: rgba(40, 48, 68, 0.851);
-        border: none;
       }
 
       .queryContent {
-        flex: 3 1 70%;
         display: flex;
+        height: 240px;
+        flex: 3 1 70%;
         flex-direction: column;
         margin: 15px 15px 0 15px;
-        text-align: left;
-        white-space: normal;
         overflow: hidden;
+        text-align: left;
         text-overflow: ellipsis;
-        height: 240px;
+        white-space: normal;
       }
 
       .overviewBox {
-        overflow: scroll;
         height: 50%;
+        overflow: scroll;
       }
 
       .queryContent button {
+        border: 1px solid #EBF5EE;
         margin-top: 25px;
         padding: 10px 15px;
-        border: 1px solid #EBF5EE;
       }
     
       .queryItem:hover {
-        filter: drop-shadow(8px 8px 10px gray);
+        filter: drop-shadow(8px 8px 10px rgb(22, 21, 21));
       }
 
       .queryItem .imgContainer {
@@ -310,12 +309,12 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
 
     /* Your flicks (FlickList.js) section start */
       .menuTop {
+        background: rgba(40, 48, 68, 0.851);
+        border: none;
+        color: #EBF5EE;
+        height: 100px;
         position: fixed;
         width: inherit;
-        height: 100px;
-        border: none;
-        background: rgba(40, 48, 68, 0.851);
-        color: #EBF5EE;
         text-align: center;
       }
 
@@ -324,14 +323,14 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
       }
 
       aside {
-        position: fixed;
-        width: 300px;
-        height: 100vh;
-        transition: 1s ease all;
         background-color: #EBF5EE;
-        right: -500px;
-        z-index: 1;
+        position: fixed;
+        height: 100vh;
         overflow: scroll;
+        right: -500px;
+        transition: 1s ease all;
+        width: 300px;
+        z-index: 1;
       }
 
       .userList li:first-child {
@@ -343,18 +342,15 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
       }
 
       .flickListItem {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 5px;
         margin-top: 5px;
+        padding: 5px;
       }
 
       .flickListItem h3 {
+        border-bottom: 1px solid #283044;
         color: #283044;
         margin: 5px 0;
         text-transform: uppercase;
-        border-bottom: 1px solid #283044;
       }
 
       .flickListItem img {
@@ -362,9 +358,9 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
       }
 
       .flickListItem button {
-        color: #EBF5EE;
-        border: 1px solid rgba(40, 48, 68, 0.851);
         background: rgba(40, 48, 68, 0.851);
+        border: 1px solid rgba(40, 48, 68, 0.851);
+        color: #EBF5EE;
         width: 80%;
       }
 
@@ -374,13 +370,13 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
       }
 
       .randomize {
-        position: fixed;
-        bottom: 0;
-        width: inherit;
-        height: 50px;
-        border: none;
         background: rgba(40, 48, 68, 0.851);
+        border: none;
+        bottom: 0;
         color: #EBF5EE;
+        height: 50px;
+        position: fixed;
+        width: inherit;
       }
 
       .showList {
@@ -391,18 +387,16 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
     /* Random Choice starts */
       .randomChoice {
         background: rgba(40, 48, 68, 0.851);
-        width: 600px;
-        padding: 25px 25px 10px 25px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
         height: 200px;
-        top: 50%;
-        margin-top: -100px;
         left: 50%;
+        margin-top: -100px;
         margin-left: -300px;
+        padding: 25px 25px 10px 25px;
+        position: absolute;
+        top: 50%;
+        width: 600px;
+        z-index: 10;
       }
 
       .randomChoice h4 {

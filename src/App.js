@@ -84,6 +84,9 @@ class App extends Component {
       // an if statement to stop fom empty search queries. If not empty, then we call Axios to search for the user's query.  
       if (userSearchValue !== '') {
         this.axiosCall(userSearchValue)
+        this.setState({
+          randomChoice: ""
+        })
       }
     }
 
@@ -189,7 +192,7 @@ class App extends Component {
             }
             {/* Search query list (QueryList.js) end */}
 
-            
+            {/* This displays the random choice for the user to watch */}
               {
                 this.state.randomChoice !== "" ? 
                 <div className="randomChoice">
@@ -199,6 +202,7 @@ class App extends Component {
                 </div>
                 : null
               }
+            {/* This displays the random choice for the user to watch */}
             
 
           </main>
