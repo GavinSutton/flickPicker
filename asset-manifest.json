@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/gavin-sutton-project-five/static/css/main.059825dd.chunk.css",
+    "main.js": "/gavin-sutton-project-five/static/js/main.bf72012b.chunk.js",
+    "main.js.map": "/gavin-sutton-project-five/static/js/main.bf72012b.chunk.js.map",
+    "runtime-main.js": "/gavin-sutton-project-five/static/js/runtime-main.2659e176.js",
+    "runtime-main.js.map": "/gavin-sutton-project-five/static/js/runtime-main.2659e176.js.map",
+    "static/js/2.bb4329c6.chunk.js": "/gavin-sutton-project-five/static/js/2.bb4329c6.chunk.js",
+    "static/js/2.bb4329c6.chunk.js.map": "/gavin-sutton-project-five/static/js/2.bb4329c6.chunk.js.map",
+    "index.html": "/gavin-sutton-project-five/index.html",
+    "precache-manifest.63c7ada38268f11f773786b2c1ca7376.js": "/gavin-sutton-project-five/precache-manifest.63c7ada38268f11f773786b2c1ca7376.js",
+    "service-worker.js": "/gavin-sutton-project-five/service-worker.js",
+    "static/css/main.059825dd.chunk.css.map": "/gavin-sutton-project-five/static/css/main.059825dd.chunk.css.map",
+    "static/js/2.bb4329c6.chunk.js.LICENSE.txt": "/gavin-sutton-project-five/static/js/2.bb4329c6.chunk.js.LICENSE.txt",
+    "static/media/errorPoster.jpg": "/gavin-sutton-project-five/static/media/errorPoster.74bddd9e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2659e176.js",
+    "static/js/2.bb4329c6.chunk.js",
+    "static/css/main.059825dd.chunk.css",
+    "static/js/main.bf72012b.chunk.js"
+  ]
+}
