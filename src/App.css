@@ -23,26 +23,25 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
 
 /* Basic styles start */
   * {
-      transition: 0.4s all ease;
+    transition: 0.4s all ease;
   }
 
   p {
     font-size: 1rem;
+    font-family: 'Muli', sans-serif;
     line-height: 1.2rem;
     margin: 0.5rem 0;
-    font-family: 'Muli', sans-serif;
   }
 
   body {
+    background: #BFA89E;
+    color: #EBF5EE;
     font-size: 125%;
     font-family: 'Muli', sans-serif;
-    color: #EBF5EE;
-    background: #BFA89E;
     height: 100vh;
-    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
   }
 
   a {
@@ -51,7 +50,10 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
   }
 
   a:hover, 
-  button:hover {
+  button:hover, 
+  .flickListItem button, 
+  .queryContent button:hover {
+    border: 1px solid #E49273;
     color: #E49273;
   }
 
@@ -60,18 +62,18 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
   }
 
   button {
-    font-size: 1rem;
-    padding: 0.5rem;
-    color: #EBF5EE;
     background: inherit;
     border: 1px solid #EBF5EE;
+    color: #EBF5EE;
+    font-size: 1rem;
+    padding: 0.5rem;
     text-transform: uppercase;
   }
 
   button:focus {
-    color: #E49273;
     border: 2px solid #E49273;
     box-shadow: 2px 2px 2px #E49273;
+    color: #E49273;
   }
 
   h1,
@@ -97,20 +99,21 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
   }
 
   img {
-        width: 100%;
-        display: block;
+    display: block;
+    width: 100%;
   }
 
   .wrapper {
-      max-width: 1280px;
-      width: 85%;
-      margin: 0 auto;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 85%;
   }
 
-  .flexCol {
+  .flexCol, 
+  header {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 /* Basic styles end */
 
@@ -120,13 +123,14 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
   /* Header styles start */
 
     header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       width: 600px;
     }
-    
 
+    h1 {
+      border-bottom: 2px solid #EBF5EE;
+      margin: 2rem 0 0.5rem;
+    }
+    
     .headerDown {
       margin-top: 250px;
     }
@@ -135,18 +139,17 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
       margin-top: 0;
     }
 
-    h1 {
-      margin: 2rem 0 0.5rem;
-      border-bottom: 2px solid #EBF5EE;
-    }
-
     .hamburger {
-      font-size: 2rem;
       background-color: inherit;
+      border: none;
+      font-size: 2rem;
       position: absolute;
       right: 34px;
       top: 20px;
       z-index: 2;
+    }
+
+    .hamburger:hover {
       border: none;
     }
 
@@ -156,12 +159,12 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
 
     .hamburger span {
       font-size: 1rem;
-      position: absolute;
-      width: 25px;
       height: 25px;
       padding: 1px 1px 1px 0;
+      position: absolute;
       top: -9px;
       text-align: center;
+      width: 25px;
     }
 
     .relative {
@@ -171,14 +174,6 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
 
 
   /* Main styles start */
-  .allContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: stretch;
-    height: 100vh;
-    flex: 1 1 100%;
-  }
 
   main {
     height: 70vh;
@@ -202,6 +197,7 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
 
       .showHelp:hover {
         transform: scale(1.1);
+        border: none
       }
 
       .helpContents {
@@ -256,6 +252,13 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
         width: 700px;
       }
 
+      .error {
+        background: rgba(40, 48, 68, 0.851);
+        width: 600px;
+        padding: 25px;
+        text-align: center;
+      }
+
       img {
         text-align: center;
       }
@@ -292,10 +295,6 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
         margin-top: 25px;
         padding: 10px 15px;
         border: 1px solid #EBF5EE;
-      }
-
-      .queryContent button:hover {
-        border: 1px solid #E49273;
       }
     
       .queryItem:hover {
@@ -389,6 +388,33 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
       }
     /* Your flicks (FlickList.js) section end */
 
+    /* Random Choice starts */
+      .randomChoice {
+        background: rgba(40, 48, 68, 0.851);
+        width: 600px;
+        padding: 25px 25px 10px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        height: 200px;
+        top: 50%;
+        margin-top: -100px;
+        left: 50%;
+        margin-left: -300px;
+      }
+
+      .randomChoice h4 {
+        font-size: 2rem;
+      }
+
+      .randomChoice button {
+        margin-top: 15px;
+      }
+
+    /* Random Choice ends */
+
 
 /* MEDIA QUERIES START */
 
@@ -410,6 +436,10 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
   .formInput {
     width: 330px;
   }
+
+  .error {
+    width: 430px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -429,6 +459,10 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
     right: -600px;
   }
 
+  .error {
+    width: 300px;
+  }
+
   .queryItem {
     flex-direction: column;
   }
@@ -439,7 +473,7 @@ lightBlue: rgb(120,161,187)  OR   #78a1bb
 
   .queryContent button {
     margin-top: 15px;
-}
+  }
 
   .flickListItem img {
     width: 40%;

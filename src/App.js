@@ -5,22 +5,7 @@ import Help from './Help.js'
 import QueryList from './QueryList.js'
 import firebase from './firebase.js'
 import axios from 'axios'
-// import AxiosCall from 'AxiosCall.js'
-
 import './App.css';
-
-
-// ideas: 
-// If search query is empty, need to say "No films found by that name"
-// const my array = []
-// if (array.length === 0 ).....
-// search by actor
-// Maybe use grid and then add change class?
-// Look up hamburger menu in react. 
-// CONNECT TO FIREBASE
-// See if you can figure out a better key scenaria
-// counter
-// add posters for missing films
 
 class App extends Component {
   // Constructor storing states. 
@@ -31,12 +16,20 @@ class App extends Component {
       filmList: [],
       // queryList stores the list of films from the API call
       queryList: [],
+      // userInput is what the user inputs into the search bar
       userInput: "",
+      // active is a boolean state that controls a few display/hide features
       active: false,
-      headerActive: false
+      // headerActive contols the headerUp and headerDown classes
+      headerActive: false,
+      // when error turns true (via aviosCall when a query is empty) then an error message is displayed. 
+      error: false,
+      // randomChoice is the film that the randomizer chooses for the user to watch.
+      randomChoice: ""
     }
   }
 
+  // This attaches firebase to the app
   componentDidMount() {
     const dbRef = firebase.database().ref();
     dbRef.on(`value`, (dbResponse) => {
@@ -51,25 +44,33 @@ class App extends Component {
     })
   }
 
-
-  // axios in a function to make the code a little cleaner, and so I can reuse if need be. 
-  axiosCall = (userQuery) => {
-    axios({
-      url: `https://api.themoviedb.org/3/search/movie`,
-      method: `GET`,
-      responseType: `json`,
-      params: {
-        api_key: `4f70306aa4e939e1535c12686b6403c7`,
-        query: userQuery
-      }
-    }).then((response) => {
-      this.setState({
-        queryList: response.data.results
-      })
-    })
-  }
-
   // METHODS START 
+    // axios in a function to make the code a little cleaner, and so I can reuse if need be. 
+    axiosCall = (userQuery) => {
+      axios({
+        url: `https://api.themoviedb.org/3/search/movie`,
+        method: `GET`,
+        responseType: `json`,
+        params: {
+          api_key: `4f70306aa4e939e1535c12686b6403c7`,
+          query: userQuery
+        }
+      }).then((response) => {
+        console.log(response.data.results)
+        if (response.data.results.length !== 0) {
+          this.setState({
+            queryList: response.data.results,
+            error: false
+          })
+        } else {
+          this.setState({
+            queryList: [],
+            error: true
+          })
+        }
+      })
+    }
+
     // handleChange captures the value change from the search input and pushes it into this.state.userInput (to be used for searching for a film)
     handleChange = (event) => {
       this.setState({
@@ -77,7 +78,7 @@ class App extends Component {
       })
     }
 
-
+    // handleFormSubmit listens to the form submit, then puts the userInput into axios
     handleFormSubmit = (event, userSearchValue) => {
       event.preventDefault();
       // an if statement to stop fom empty search queries. If not empty, then we call Axios to search for the user's query.  
@@ -96,7 +97,7 @@ class App extends Component {
       })
     }
 
-    // Toggles the active state to true or false which toggles the FlickList.js on and off the screen
+    // Toggles the active state to true or false which toggles the FlickList.js (the side menu) on and off the screen
     handleShowList = () => {
       this.setState({
         active: !this.state.active
@@ -107,7 +108,10 @@ class App extends Component {
     handleRandomize = () => {
       const randomFilm = [...this.state.filmList]
       const randomNumber = Math.floor(Math.random() * randomFilm.length)
-      alert("You should watch " + randomFilm[randomNumber].filmName.filmName)
+      this.setState({
+        randomChoice: randomFilm[randomNumber].filmName.filmName,
+        queryList: []
+      })
     }
 
     // handleHeaderActive turns this.state.headerActive to true, and "opening" the page for the search query list to show. 
@@ -122,7 +126,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <div className="wrapper flexCol relative allContent" >  
+        <div className="wrapper flexCol relative" >  
             {/* Header section start */}
           <header>
 
@@ -179,12 +183,24 @@ class App extends Component {
             {
               this.state.headerActive ? 
               <ul className="queryList">
-                <QueryList queryList={this.state.queryList} addToUserList={this.handleAddToUserList}/>
+                  <QueryList queryList={this.state.queryList} error={this.state.error} addToUserList={this.handleAddToUserList}/>
               </ul>
               : null
             }
-
             {/* Search query list (QueryList.js) end */}
+
+            
+              {
+                this.state.randomChoice !== "" ? 
+                <div className="randomChoice">
+                  <p>You should watch</p>
+                  <h4>{this.state.randomChoice}</h4> 
+                  <button aria-label="Close random choice" onClick={()=> this.setState({randomChoice:""})}>Thanks!</button>
+                </div>
+                : null
+              }
+            
+
           </main>
             
         </div>
