@@ -56,7 +56,6 @@ class App extends Component {
           query: userQuery
         }
       }).then((response) => {
-        console.log(response.data.results)
         if (response.data.results.length !== 0) {
           this.setState({
             queryList: response.data.results,
@@ -136,7 +135,7 @@ class App extends Component {
               {/* headerUp/header down section start (moves up and down) */}
               <div className={this.state.headerActive? "headerUp flexCol" : "headerDown flexCol"}>
                 <h1>FlickPicker</h1>
-              <button onClick={this.handleShowList} className={this.state.active ? "hamburger white" : "hamburger"} aria-label="Open your film list menu"><i className="fas fa-film"></i><span>{this.state.filmList.length}</span></button>
+              <button onClick={this.handleShowList} className="hamburger" aria-label="Open your film list menu"><i className="fas fa-film"></i><span>{this.state.filmList.length}</span></button>
 
 
                 {/* Help.js section start */}
@@ -172,7 +171,7 @@ class App extends Component {
                     })
                   }
                 </ul>
-                <button onClick={this.handleRandomize} className="randomize" aria-label="Randomize your film list">Randomize</button>
+              <button onClick={this.handleRandomize} className={this.state.active ? "showList randomize" : "randomize"} aria-label="Randomize your film list">Randomize</button>
 
               </aside>
               {/* FlickList / Side Menu end */}

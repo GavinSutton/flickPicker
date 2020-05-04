@@ -16,7 +16,7 @@ class QueryList extends Component {
                     this.props.queryList.map((props) => {
                         
                         return (
-                            <li key={props.id} className="addItem queryItem">
+                            <li key={props.id} className="queryItem">
                                     <div className="imgContainer">
                                         <img src={props.poster_path === null ? errorPoster : "https://image.tmdb.org/t/p/w500" + props.poster_path} alt={"Poster for " + props.title} />
                                     </div>

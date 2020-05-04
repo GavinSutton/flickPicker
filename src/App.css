@@ -107,7 +107,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   .flexCol, 
   header, 
   .helpContents, 
-  .queryList, 
   .flickListItem, 
   .randomChoice {
     align-items: center;
@@ -150,10 +149,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
     .hamburger:hover {
       border: none;
-    }
-
-    .white {
-      color: #EBF5EE;
     }
 
     .hamburger span {
@@ -245,6 +240,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         height: inherit;
         overflow: auto;
         width: 700px;
+        margin: 0 auto;
+        padding-left: 48px;
       }
 
       .error {
@@ -369,10 +366,12 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         background: rgba(40, 48, 68, 0.851);
         border: none;
         bottom: 0;
+        right: -500px;
         color: #EBF5EE;
         height: 50px;
         position: fixed;
         width: inherit;
+        transition: 1s ease all;
       }
 
       .showList {
@@ -433,9 +432,14 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 }
 
 @media (max-width: 700px) {
+  .queryList {
+    width: 430px;
+    padding-left: 0;
+  }
+
   .queryItem {
     min-width: auto;
-    width: 60%;
+    width: 100%;
   }
 
   .queryContent {
@@ -451,10 +455,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .error {
     width: 300px;
-  }
-
-  .queryItem {
-    display: inline-block;
   }
 
   .queryContent {
@@ -474,7 +474,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   h1 {
     font-size: 2.2rem;
   }
@@ -488,9 +488,14 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     width: 200px;
   }
 
+  .queryList {
+    width: 300px;
+  }
+
   .queryItem {
     min-width: auto;
-    width: 43%;
+    flex-direction: column;
+    align-items: center;
   }
 
   .queryContent {
