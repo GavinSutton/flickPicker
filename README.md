@@ -1,6 +1,6 @@
-Hey! Welcome to my fifth project for Juno's Bootcamp. 
+Hey! Welcome to my fifth project for Juno's Bootcamp (Winter II 2020, Cohort 26). 
 
-Backstory: This was my first time using React, and it was built during the great quarentine of 2020. I decided to solve a problem that my room mates and I were having night after night — which movie should we watch? We had started compliling movies we were interested in watching in a list then using a random number generator in google to pick the film for the night. Every night I kept thinking "I could just build this", so I did. 
+Backstory: This was my first time using React, and it was built during the great quarentine of 2020. I decided to solve a problem that my roommates and I were having night after night — which movie should we watch? We had started compliling movies we were interested in watching in a list then using a random number generator in google to pick the film for the night. Every night I kept thinking "I could just build this", so I did. 
 
 Enjoy! 
 
