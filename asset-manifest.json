@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/gavin-sutton-project-five/static/css/main.4fe4a00f.chunk.css",
-    "main.js": "/gavin-sutton-project-five/static/js/main.66ec296f.chunk.js",
-    "main.js.map": "/gavin-sutton-project-five/static/js/main.66ec296f.chunk.js.map",
-    "runtime-main.js": "/gavin-sutton-project-five/static/js/runtime-main.2659e176.js",
-    "runtime-main.js.map": "/gavin-sutton-project-five/static/js/runtime-main.2659e176.js.map",
-    "static/js/2.bb4329c6.chunk.js": "/gavin-sutton-project-five/static/js/2.bb4329c6.chunk.js",
-    "static/js/2.bb4329c6.chunk.js.map": "/gavin-sutton-project-five/static/js/2.bb4329c6.chunk.js.map",
-    "index.html": "/gavin-sutton-project-five/index.html",
-    "precache-manifest.442252028c2fdb852ffbe1a2f84f18f8.js": "/gavin-sutton-project-five/precache-manifest.442252028c2fdb852ffbe1a2f84f18f8.js",
-    "service-worker.js": "/gavin-sutton-project-five/service-worker.js",
-    "static/css/main.4fe4a00f.chunk.css.map": "/gavin-sutton-project-five/static/css/main.4fe4a00f.chunk.css.map",
-    "static/js/2.bb4329c6.chunk.js.LICENSE.txt": "/gavin-sutton-project-five/static/js/2.bb4329c6.chunk.js.LICENSE.txt",
-    "static/media/errorPoster.jpg": "/gavin-sutton-project-five/static/media/errorPoster.74bddd9e.jpg"
+    "main.css": "/flickPicker/static/css/main.4fe4a00f.chunk.css",
+    "main.js": "/flickPicker/static/js/main.e12d0e9f.chunk.js",
+    "main.js.map": "/flickPicker/static/js/main.e12d0e9f.chunk.js.map",
+    "runtime-main.js": "/flickPicker/static/js/runtime-main.e513f3a0.js",
+    "runtime-main.js.map": "/flickPicker/static/js/runtime-main.e513f3a0.js.map",
+    "static/js/2.8b70cb0d.chunk.js": "/flickPicker/static/js/2.8b70cb0d.chunk.js",
+    "static/js/2.8b70cb0d.chunk.js.map": "/flickPicker/static/js/2.8b70cb0d.chunk.js.map",
+    "index.html": "/flickPicker/index.html",
+    "precache-manifest.5dd489a2b3c8f6508f13e0884314a03a.js": "/flickPicker/precache-manifest.5dd489a2b3c8f6508f13e0884314a03a.js",
+    "service-worker.js": "/flickPicker/service-worker.js",
+    "static/css/main.4fe4a00f.chunk.css.map": "/flickPicker/static/css/main.4fe4a00f.chunk.css.map",
+    "static/js/2.8b70cb0d.chunk.js.LICENSE.txt": "/flickPicker/static/js/2.8b70cb0d.chunk.js.LICENSE.txt",
+    "static/media/errorPoster.jpg": "/flickPicker/static/media/errorPoster.74bddd9e.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2659e176.js",
-    "static/js/2.bb4329c6.chunk.js",
+    "static/js/runtime-main.e513f3a0.js",
+    "static/js/2.8b70cb0d.chunk.js",
     "static/css/main.4fe4a00f.chunk.css",
-    "static/js/main.66ec296f.chunk.js"
+    "static/js/main.e12d0e9f.chunk.js"
   ]
 }
