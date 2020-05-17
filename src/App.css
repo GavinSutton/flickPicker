@@ -140,9 +140,9 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     .hamburger {
       background-color: inherit;
       border: none;
-      font-size: 2rem;
-      position: absolute;
-      right: 34px;
+      font-size: 2.2rem;
+      position: fixed;
+      right: 30px;
       top: 20px;
       z-index: 2;
     }
@@ -157,6 +157,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       padding: 1px 1px 1px 0;
       position: absolute;
       top: -9px;
+      right: -12px;
       text-align: center;
       width: 25px;
     }
@@ -184,8 +185,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         background-color: inherit;
         border: none;
         font-size: 2rem;
-        position: absolute;
-        right: -30px;
+        position: fixed;
+        left: 30px;
         top: 20px;
       }
 

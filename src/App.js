@@ -53,7 +53,8 @@ class App extends Component {
         responseType: `json`,
         params: {
           api_key: `4f70306aa4e939e1535c12686b6403c7`,
-          query: userQuery
+          query: userQuery,
+          include_adult: 'false',
         }
       }).then((response) => {
         if (response.data.results.length !== 0) {
