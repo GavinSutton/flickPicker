@@ -160,7 +160,7 @@ class App extends Component {
               {/* FlickList / Side Menu start */}
               <aside className={this.state.active ? "showList" : null}>
                 <div className="menuTop">
-                  <h2>Your Flicks</h2>
+                  <h2>Your FlickList</h2>
                 </div>
                 <ul className="userList">
                   <li></li>

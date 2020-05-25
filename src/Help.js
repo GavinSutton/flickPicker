@@ -17,12 +17,12 @@ class Help extends Component {
     render(){
         return(
             <div className="helpBox">
-                <button className="showHelp" onClick={this.handleShowHelp} aria-label="Show help box"><i className="far fa-question-circle"></i></button>
+                <button className="showHelp" onClick={this.handleShowHelp} aria-label="Show help box">Instructions</button>
                 {/* Help information: shown when {this.state.active: true} */}
                 {this.state.active 
                     ? <div className="helpContents">
-                        <p>Having trouble deciding on a movie?</p>
-                        <p>Find flicks that tickle your fancy using the search bar below. Click "Add Flick" to add that movie to the list. View your current list by clicking the film button in the top right corner. Hit randomize and we'll make the choice for you.</p>
+                        <p>Need helping picking a movie?</p>
+                        <p>Find flicks you're interested in watching using the search bar below. Click "Add Flick" to add that movie to your FlickList. View your current FlickList by clicking the film strip button in the top right corner. Hit randomize and we'll make the choice for you.</p>
                     </div>
                     : null}
             </div>
