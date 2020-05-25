@@ -182,34 +182,19 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     /* Help section start */
 
       .showHelp {
-        background-color: inherit;
-        border: none;
-        font-size: 2rem;
-        position: fixed;
-        left: 30px;
-        top: 20px;
-      }
-
-      .showHelp:hover {
-        border: none;
-        transform: scale(1.1);
+        width: 600px;
       }
 
       .helpContents {
         background: #EBF5EE;
-        border: 2px solid rgba(40, 48, 68, 0.851);
         color:rgba(40, 48, 68, 0.851);
         justify-content: center;
-        left: 50%;
         height: 200px;
         margin: 5px 0;
         padding: 5px;
-        position: absolute;
-        margin-left: -400px;
-        margin-top: -100px;
+        position: relative;
         text-align: center;
-        top: 50%;
-        width: 800px;
+        width: 600px;
       }
     /* Help section end */
 
@@ -413,21 +398,23 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     font-size: 3.5rem;
   }
 
-  .headerUp {
-    margin-top: 50px;
-  }
-
-  .helpContents {
-    width: 400px;
-    left: 50%;
-    margin-left: -200px;
+  .error {
+    width: 430px;
   }
 
   .formInput {
     width: 330px;
   }
 
-  .error {
+  .headerUp {
+    margin-top: 50px;
+  }
+
+  .helpContents {
+    width: 430px;
+  }
+
+  .showHelp {
     width: 430px;
   }
 }
@@ -482,7 +469,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .helpContents {
     width: 300px;
-    margin-left: -150px;
   }
 
   .formInput {
@@ -501,5 +487,9 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .queryContent {
     height: 200px;
+  }
+
+  .showHelp {
+    width: 300px;
   }
 }
