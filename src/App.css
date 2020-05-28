@@ -34,7 +34,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     font-size: 125%;
     font-family: 'Muli', sans-serif;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -265,13 +265,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       }
 
       .overviewBox {
-        height: 50%;
+        height: 90%;
         overflow: auto;
       }
 
       .queryContent button {
         border: 1px solid #EBF5EE;
-        margin-top: 25px;
+        margin: 10px 0;
         padding: 10px 15px;
       }
     
@@ -326,9 +326,9 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       }
 
       .flickListItem h3 {
-        border-bottom: 1px solid #283044;
         color: #283044;
         margin: 5px 0;
+        text-align: center;
         text-transform: uppercase;
       }
 
