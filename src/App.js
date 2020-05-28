@@ -25,7 +25,9 @@ class App extends Component {
       // when error turns true (via aviosCall when a query is empty) then an error message is displayed. 
       error: false,
       // randomChoice is the film that the randomizer chooses for the user to watch.
-      randomChoice: ""
+      randomChoice: "",
+      // checks for duplicates
+      duplicate: null
     }
   }
 
@@ -94,9 +96,9 @@ class App extends Component {
     handleAddToUserList = (event, filmName, filmId, filmImg) => {
       event.preventDefault();
       const dbRef = firebase.database().ref();
-      dbRef.push({filmName: filmName, filmId: filmId, filmImg: filmImg})
+      dbRef.push({ filmName: filmName, filmId: filmId, filmImg: filmImg })
       this.setState({
-        userInput: ""
+        userInput: "",
       })
     }
 
