@@ -171,8 +171,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   /* Main styles start */
 
   main {
-    height: 70vh;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .flex {
@@ -352,7 +351,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         background: rgba(40, 48, 68, 0.851);
         border: none;
         bottom: 0;
-        right: -500px;
+        right: -600px;
         color: #EBF5EE;
         height: 50px;
         position: fixed;
