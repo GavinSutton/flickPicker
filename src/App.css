@@ -22,7 +22,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: 'Muli', sans-serif;
     line-height: 1.2rem;
     margin: 0.5rem 0;
@@ -60,7 +60,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     background: inherit;
     border: 1px solid #EBF5EE;
     color: #EBF5EE;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0.5rem;
     text-transform: uppercase;
   }
@@ -491,5 +491,9 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .showHelp {
     width: 300px;
+  }
+
+  .userList li:last-child {
+    margin-bottom: 100px;
   }
 }
