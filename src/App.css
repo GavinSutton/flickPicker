@@ -381,6 +381,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
       .randomChoice h4 {
         font-size: 2rem;
+        text-align: center;
       }
 
       .randomChoice button {
@@ -486,6 +487,10 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .queryContent {
     height: 200px;
+  }
+
+  .randomChoice h4 {
+    width: 50%;
   }
 
   .showHelp {
