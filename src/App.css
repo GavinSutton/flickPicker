@@ -351,7 +351,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         background: rgba(40, 48, 68, 0.851);
         border: none;
         bottom: 0;
-        right: -600px;
+        right: -500px;
         color: #EBF5EE;
         height: 50px;
         position: fixed;
@@ -459,6 +459,14 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .flickListItem button {
     width: 40%;
+  }
+
+  .randomize {
+    right: -600px;
+  }
+
+  .showList {
+    right: 0px
   }
 }
 
