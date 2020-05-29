@@ -466,6 +466,20 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     width: 40%;
   }
 
+  .overviewBox {
+    height: auto;
+  }
+
+  .queryItem {
+    min-width: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .queryContent {
+    height: auto;
+  }
+
   .randomize {
     right: -600px;
   }
@@ -490,16 +504,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .queryList {
     width: 300px;
-  }
-
-  .queryItem {
-    min-width: auto;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .queryContent {
-    height: 200px;
   }
 
   .randomChoice h4 {
