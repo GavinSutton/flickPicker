@@ -95,11 +95,27 @@ class App extends Component {
     // Adds a film to the list. The parameters are grabbed from QueryList.js when a user clicks to add a film
     handleAddToUserList = (event, filmName, filmId, filmImg) => {
       event.preventDefault();
-      const dbRef = firebase.database().ref();
-      dbRef.push({ filmName: filmName, filmId: filmId, filmImg: filmImg })
-      this.setState({
-        userInput: "",
-      })
+      const db = firebase.database().ref();
+      const duplicateCheck = []
+
+      // This takes a function creates a new array from the database of just the film ID's in order to check them for duplicates
+      db.once('value', function (snapshot) {
+        snapshot.forEach(function (childSnapshot) {
+          duplicateCheck.push(childSnapshot.val().filmId)
+        });
+      });
+
+      // if there is a duplicate, we tell the user the film has been added, and if not, we add it to the list. 
+      if (duplicateCheck.includes(filmId)) {
+        alert(`${filmName} has already been added to your FlickList`)
+      } else {
+        console.log("Not there")
+        db.push({ filmName: filmName, filmId: filmId, filmImg: filmImg })
+        this.setState({
+          userInput: "",
+        })
+      }
+
     }
 
     // Toggles the active state to true or false which toggles the FlickList.js (the side menu) on and off the screen
