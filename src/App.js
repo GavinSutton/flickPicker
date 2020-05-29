@@ -109,7 +109,6 @@ class App extends Component {
       if (duplicateCheck.includes(filmId)) {
         alert(`${filmName} has already been added to your FlickList`)
       } else {
-        console.log("Not there")
         db.push({ filmName: filmName, filmId: filmId, filmImg: filmImg })
         this.setState({
           userInput: "",
