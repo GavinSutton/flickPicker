@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/flickPicker/precache-manifest.f6d440b46dc9939cd63d26854c02884b.js"
+  "/flickPicker/precache-manifest.3b0f81c7827b5d474cbde67cf1f5eacc.js"
 );
 
 self.addEventListener('message', (event) => {
