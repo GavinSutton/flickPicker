@@ -5,6 +5,12 @@ class QueryList extends Component {
 
     waitAddToUserList  = (event) => {
         this.props.addToUserList(event, event.target.value, event.target.id, event.target.attributes.data.value)
+        this.added(event.target.id)
+    }
+
+    added = (id) => {
+        let button = document.getElementById(id)
+        button.innerHTML="Added"
     }
 
     render(){
@@ -30,8 +36,9 @@ class QueryList extends Component {
                                             value={props.title}
                                             id={props.id}
                                             data={"https://image.tmdb.org/t/p/w500" + props.poster_path}
+                                            className="addFlick"
                                         >
-                                            Add Flick
+                                            Add Fick
                                         </button>
                                     </div>
                             </li>

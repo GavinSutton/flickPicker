@@ -138,9 +138,8 @@ class App extends Component {
               {/* headerUp/header down section start (moves up and down) */}
               <div className={this.state.headerActive? "headerUp flexCol" : "headerDown flexCol"}>
                 <h1>FlickPicker</h1>
-                <div class="topBar">
                   <button onClick={this.handleShowList} className="hamburger" aria-label="Open your film list menu"><i className="fas fa-film"></i><span>{this.state.filmList.length}</span></button>
-                </div>
+                
 
 
                 {/* Help.js section start */}

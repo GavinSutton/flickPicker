@@ -142,12 +142,12 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     }
 
     .hamburger {
-      background-color: inherit;
+      background-color: transparent;
       border: none;
       font-size: 2.2rem;
       position: fixed;
-      right: 30px;
-      top: 20px;
+      right: 120px;
+      top: 12px;
       z-index: 2;
     }
 
@@ -160,8 +160,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       height: 25px;
       padding: 1px 1px 1px 0;
       position: absolute;
-      top: -9px;
       right: -12px;
+      top: 0px;
       text-align: center;
       width: 25px;
     }
@@ -170,12 +170,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       position: relative
     }
 
-    /* .topBar {
+    .topBar {
       background: rgba(40, 48, 68, 0.851);
       position: relative;
       left: 0;
       right: 0;
-    } */
+      height: 50px;
+    }
   /* Header styles end */
 
 
@@ -283,6 +284,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         border: 1px solid #EBF5EE;
         margin: 10px 0;
         padding: 10px 15px;
+        content: "Add Flick";
       }
     
       .queryItem:hover {
@@ -475,6 +477,10 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .flickListItem button {
     width: 40%;
+  }
+
+  .hamburger {
+    right: 30px;
   }
 
   .overviewBox {
