@@ -21,6 +21,10 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     transition: 0.4s all ease;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   p {
     font-size: 1.2rem;
     font-family: 'Muli', sans-serif;
@@ -165,6 +169,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     .relative {
       position: relative
     }
+
+    /* .topBar {
+      background: rgba(40, 48, 68, 0.851);
+      position: relative;
+      left: 0;
+      right: 0;
+    } */
   /* Header styles end */
 
 
