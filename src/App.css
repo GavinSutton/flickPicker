@@ -283,6 +283,11 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
         min-width: 150px;
       }
 
+      .queryItem h3 {
+        overflow: scroll;
+        padding: 0 0 20px;
+      }
+
     /* Film search list section end */
 
     /* Your flicks (FlickList.js) section start */
