@@ -5,6 +5,7 @@ import Help from './Help.js'
 import QueryList from './QueryList.js'
 import firebase from './firebase.js'
 import axios from 'axios'
+import MoreInfo from './MoreInfo.js'
 import './App.css';
 
 class App extends Component {
@@ -26,10 +27,17 @@ class App extends Component {
       error: false,
       // randomChoice is the film that the randomizer chooses for the user to watch.
       randomChoice: "",
-      // checks for duplicates
-      duplicate: null
+      // stores informatin from second API call looking for more info
+      moreInfo: {},
+      // credits for movie
+      credits: [],
+      // videos for movie
+      videos: [],
+      // info box active
+      infoBox: false
     }
   }
+
 
   // This attaches firebase to the app
   componentDidMount() {
@@ -72,6 +80,53 @@ class App extends Component {
         }
       })
     }
+
+    // This second axios call is necessary because of how the movie database is set up. To get the most info from a particular film, you need to send the movie ID into this call. 
+    handleMoreInfo = (userQuery) => {
+      // Get more info
+      axios({
+        url: `https://api.themoviedb.org/3/movie/${userQuery}`,
+        method: `GET`,
+        responseType: `json`,
+        params: {
+          // movie_id: userQuery,
+          api_key: `4f70306aa4e939e1535c12686b6403c7`,
+        }
+      }).then((response) => {
+        this.setState({
+          moreInfo: response.data
+        })
+      })
+      // Get movie credits
+      axios({
+        url: `https://api.themoviedb.org/3/movie/${userQuery}/credits`,
+        method: `GET`,
+        responseType: `json`,
+        params: {
+          // movie_id: userQuery,
+          api_key: `4f70306aa4e939e1535c12686b6403c7`,
+        }
+      }).then((response) => {
+        this.setState({
+          credits: response.data.cast.slice(0, 3)
+        })
+      })
+      // Get videos
+      axios({
+        url: `https://api.themoviedb.org/3/movie/${userQuery}/videos`,
+        method: `GET`,
+        responseType: `json`,
+        params: {
+          // movie_id: userQuery,
+          api_key: `4f70306aa4e939e1535c12686b6403c7`,
+        }
+      }).then((response) => {
+        this.setState({
+          videos: response.data.results[0]
+        })
+      })
+    }
+
 
     // handleChange captures the value change from the search input and pushes it into this.state.userInput (to be used for searching for a film)
     handleChange = (event) => {
@@ -141,6 +196,12 @@ class App extends Component {
       })
     }
 
+    handleInfoBox = () =>{
+      this.setState({
+        infoBox: !this.state.infoBox
+      })
+    }
+
   // METHODS END
 
   render(){
@@ -200,11 +261,16 @@ class App extends Component {
 
 
           <main>
+            {
+              this.state.infoBox ? 
+                <MoreInfo movieInfo={this.state.moreInfo} videoInfo={this.state.videos} castInfo={this.state.credits} infoBox={this.handleInfoBox}/>
+              : null
+            }
             {/* Search query list (QueryList.js) start */}
             {
               this.state.headerActive ? 
               <ul className="queryList">
-                  <QueryList queryList={this.state.queryList} error={this.state.error} addToUserList={this.handleAddToUserList}/>
+                  <QueryList queryList={this.state.queryList} error={this.state.error} addToUserList={this.handleAddToUserList} moreInfo={this.handleMoreInfo} infoBox={this.handleInfoBox} />
               </ul>
               : null
             }

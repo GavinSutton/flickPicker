@@ -8,6 +8,11 @@ class QueryList extends Component {
         this.added(event.target.id)
     }
 
+    moreInfo = (event) => {
+        this.props.moreInfo(event.target.value)
+        this.props.infoBox()
+    }
+
     added = (id) => {
         let button = document.getElementById(id)
         button.innerHTML="Added"
@@ -23,24 +28,31 @@ class QueryList extends Component {
                         
                         return (
                             <li key={props.id} className="queryItem">
-                                    <div className="imgContainer">
-                                        <img src={props.poster_path === null ? errorPoster : "https://image.tmdb.org/t/p/w500" + props.poster_path} alt={"Poster for " + props.title} />
+                                <div className="imgContainer">
+                                    <img src={props.poster_path === null ? errorPoster : "https://image.tmdb.org/t/p/w500" + props.poster_path} alt={"Poster for " + props.title} />
+                                </div>
+                                <div className="queryContent">
+                                    <h3>{props.title}</h3>
+                                    <div className="overviewBox">
+                                        <p>{props.overview}</p>
                                     </div>
-                                    <div className="queryContent">
-                                        <h3>{props.title}</h3>
-                                        <div className="overviewBox">
-                                            <p>{props.overview}</p>
-                                        </div>
-                                        <button
-                                            onClick={this.waitAddToUserList}
-                                            value={props.title}
-                                            id={props.id}
-                                            data={"https://image.tmdb.org/t/p/w500" + props.poster_path}
-                                            className="addFlick"
-                                        >
-                                            Add Fick
-                                        </button>
+                                    <div>
+                                    <button
+                                        onClick={this.moreInfo}
+                                        value={props.id}
+                                    >
+                                        More Info
+                                    </button>
+                                    <button
+                                        onClick={this.waitAddToUserList}
+                                        value={props.title}
+                                        id={props.id}
+                                        data={"https://image.tmdb.org/t/p/w500" + props.poster_path}
+                                    >
+                                        Add Fick
+                                    </button>
                                     </div>
+                                </div>
                             </li>
                         )
                     })
