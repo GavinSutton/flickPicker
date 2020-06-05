@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "be34e30d5ef061b3a0f460526c05f36d",
+    "revision": "2e5b743dede04e80b6acf9151f994315",
     "url": "/flickPicker/index.html"
   },
   {
-    "revision": "43c7068b2674a48778bf",
-    "url": "/flickPicker/static/css/main.da6f2642.chunk.css"
+    "revision": "1b70a967778ee801cd21",
+    "url": "/flickPicker/static/css/main.b1d45273.chunk.css"
   },
   {
     "revision": "88b44534dd5ed49a27b4",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flickPicker/static/js/2.94e458f4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "43c7068b2674a48778bf",
+    "revision": "1b70a967778ee801cd21",
     "url": "/flickPicker/static/js/main.dc9d093b.chunk.js"
   },
   {
