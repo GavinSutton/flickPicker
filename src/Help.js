@@ -23,6 +23,7 @@ class Help extends Component {
                     ? <div className="helpContents">
                         <p>Need helping picking a movie?</p>
                         <p>Find flicks you're interested in watching using the search bar below. Click "Add Flick" to add that movie to your FlickList. View your current FlickList by clicking the film strip button in the top right corner. Hit randomize and we'll make the choice for you.</p>
+                        <button className="showHelpClose" onClick={this.handleShowHelp} aria-label="Show help box">Close</button>
                     </div>
                     : null}
             </div>

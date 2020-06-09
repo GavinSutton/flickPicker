@@ -134,7 +134,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     }
     
     .headerDown {
-      margin-top: 250px;
+      margin-top: 200px;
     }
 
     .headerUp {
@@ -195,16 +195,26 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
       .showHelp {
         width: 600px;
       }
+      
+      .showHelpClose {
+        color: rgba(40, 48, 68, 0.851);
+        border-top: 1px solid rgba(40, 48, 68, 0.851);
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+      }
 
       .helpContents {
         background: #EBF5EE;
+        border: 1px solid rgba(40, 48, 68, 0.851);
         color:rgba(40, 48, 68, 0.851);
         justify-content: center;
-        height: 200px;
+        height: 225px;
         margin: 5px 0;
-        padding: 5px;
-        position: relative;
+        padding: 5px 10px 30px;
+        position: absolute;
         text-align: center;
+        top: 240px;
         width: 600px;
       }
     /* Help section end */
@@ -479,6 +489,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .helpContents {
     width: 430px;
+    top: 230px;
   }
 
   .showHelp {
@@ -577,8 +588,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
   .helpContents {
     width: 300px;
-    height: 250px;
-    padding: 10px;
+    height: 300px;
   }
 
   .formInput {
