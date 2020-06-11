@@ -30,8 +30,8 @@ class MoreInfo extends Component {
                     {
                         this.props.videoInfo === undefined ? <p>No Trailer Avaialable</p> : <iframe src={"https://www.youtube.com/embed/" + this.props.videoInfo.key} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen className="trailer"></iframe>
                     }
-                    <button onClick={this.props.infoBox}>Close</button>
                 </div>
+                <button onClick={this.props.infoBox}>Close</button>
             </div>
         )
     }

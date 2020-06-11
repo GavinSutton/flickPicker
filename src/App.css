@@ -348,16 +348,18 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
       .trailer {
         width: 100%;
-        height: calc(100% - 52px);
+        height: 100%;
       }
 
       .trailerBox {
         height: 400px;
       }
 
-      .trailerBox button{
+      .movieInfo button{
+        bottom: 0;
+        height: 50px;
+        position: sticky;
         width: 100%;
-        height: 50px
       }
 
     /* Film info section end */
