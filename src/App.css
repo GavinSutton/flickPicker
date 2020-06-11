@@ -358,6 +358,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
       .movieInfo button{
         bottom: 0;
+        display: block;
         height: 50px;
         position: sticky;
         position: -webkit-sticky;
