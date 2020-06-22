@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bea57a9fea33fe54748ebc09c632beed",
+    "revision": "7f50224371b96abdd530e1b37c16b440",
     "url": "/flickPicker/index.html"
   },
   {
