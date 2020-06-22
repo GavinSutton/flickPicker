@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/flickPicker/static/css/main.b25bd8f8.chunk.css",
+    "main.css": "/flickPicker/static/css/main.8c772e39.chunk.css",
     "main.js": "/flickPicker/static/js/main.6640a47c.chunk.js",
     "main.js.map": "/flickPicker/static/js/main.6640a47c.chunk.js.map",
     "runtime-main.js": "/flickPicker/static/js/runtime-main.e513f3a0.js",
@@ -8,16 +8,16 @@
     "static/js/2.94e458f4.chunk.js": "/flickPicker/static/js/2.94e458f4.chunk.js",
     "static/js/2.94e458f4.chunk.js.map": "/flickPicker/static/js/2.94e458f4.chunk.js.map",
     "index.html": "/flickPicker/index.html",
-    "precache-manifest.504a3ac068c5e92ecd7df58cff37b5d9.js": "/flickPicker/precache-manifest.504a3ac068c5e92ecd7df58cff37b5d9.js",
+    "precache-manifest.a07db4c7e78b76d7ad6adccbb0851ecf.js": "/flickPicker/precache-manifest.a07db4c7e78b76d7ad6adccbb0851ecf.js",
     "service-worker.js": "/flickPicker/service-worker.js",
-    "static/css/main.b25bd8f8.chunk.css.map": "/flickPicker/static/css/main.b25bd8f8.chunk.css.map",
+    "static/css/main.8c772e39.chunk.css.map": "/flickPicker/static/css/main.8c772e39.chunk.css.map",
     "static/js/2.94e458f4.chunk.js.LICENSE.txt": "/flickPicker/static/js/2.94e458f4.chunk.js.LICENSE.txt",
     "static/media/errorPoster.jpg": "/flickPicker/static/media/errorPoster.74bddd9e.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e513f3a0.js",
     "static/js/2.94e458f4.chunk.js",
-    "static/css/main.b25bd8f8.chunk.css",
+    "static/css/main.8c772e39.chunk.css",
     "static/js/main.6640a47c.chunk.js"
   ]
 }
